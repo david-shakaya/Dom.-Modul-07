@@ -10,7 +10,7 @@
 /* 
 *
 *   - Ищем CSS селектор либо ДОМ УЗЕЛ  по названию тега'h1' ИЛИ по класу 
-*   - querySelector('') - ищет класс селектора, возврвщает первый найденный.
+*   - querySelector('.title') - ищет класс селектора, возврвщает первый найденный.
 *
 */
    
@@ -120,22 +120,33 @@
 </div>
 */
 
-const product = {
+const products = [{
     name: 'Светоприводы',
     description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
-    price: 2000
-}
-
-
-const product2 = {
+    price: 2000,
+    isOnline: true
+},
+{
     name: 'Сракорефрижираторы',
     description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
-    price: 1400
-}
+    price: 1400,
+    isOnline: false
 
-const fn = (productName, changeClass) => {
+},
+{
+    name: 'Алюминевые огурцы',
+    description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
+    price: 325,
+    isOnline: true
+}]
+
+
+
+
+const fn = (productName) => {
 
 const wrapperRef = document.createElement('div')
 wrapperRef.classList.add('product-cart')
@@ -143,7 +154,7 @@ console.log(wrapperRef)
 
 
 const titleRef = document.createElement('h2')
-titleRef.classList.add(changeClass)
+titleRef.classList.add('product-title')
 titleRef.textContent = productName.name
 
 
@@ -159,11 +170,29 @@ descPriceRef.textContent = `Цена: ${productName.price} кредитов`
 
 
     
-wrapperRef.append(titleRef, descRef, descPriceRef)
+wrapperRef.append(titleRef, descRef, descPriceRef) //Добавляем в див другие елементы 'апендом'
 
-const cardRoot = document.querySelector('#root')
-
-cardRoot.appendChild(wrapperRef) // Добавляем созданые элементы в ДОМ
+return wrapperRef //ВОзвращаем див в котором уже все элементы
 }
-fn(product, 'product-title' )
-fn(product2, 'product-title' )
+
+// fn(products[0]) //вызываем функцию которая возвращает div c вложенными тегами
+// fn(products[1] )
+
+
+const createArreyTags = products.map(product => fn(product))
+ //создаем функц. которая возвраще масив обьектов полученой из FN. Тоесть функц. возвращает результат другой функц.
+console.log(createArreyTags)
+
+ 
+const cardRoot = document.querySelector('#root') // Находим "id=root" в HTML разметке и присваеваем переменной то что нашли
+cardRoot.append(...createArreyTags) // Распыляем масив обект и апендом добавл. в дом// Добавляем созданые элементы в ДОМ
+
+
+/* 
+*
+*  -  Пример как импортировать обьект JS из другого файла
+*
+*/
+
+
+
