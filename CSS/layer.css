@@ -1,0 +1,38 @@
+.container {
+  display: block;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.button-for-img {
+  display: block;
+  margin-top: 10px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.is_online_products::before {
+  display: inline-block;
+  border-radius: 50%;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: green;
+
+  margin-right: 8px;
+}
+
+.is_not_online_products::before {
+  display: inline-block;
+  border-radius: 50%;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: red;
+
+  margin-right: 8px;
+}

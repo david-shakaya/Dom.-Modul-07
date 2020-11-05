@@ -140,7 +140,7 @@ const products = [{
     description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
     price: 325,
-    isOnline: true
+    isOnline: false
 }]
 
 
@@ -148,14 +148,18 @@ const products = [{
 
 const fn = (productName) => {
 
-const wrapperRef = document.createElement('div')
-wrapperRef.classList.add('product-cart')
+const wrapperRef = document.createElement('div') //Динамически создаем елемент div
+wrapperRef.classList.add('product-cart')  // Добавляем класс div - у
 console.log(wrapperRef)
 
 
-const titleRef = document.createElement('h2')
-titleRef.classList.add('product-title')
-titleRef.textContent = productName.name
+    const titleRef = document.createElement('h2') //Динамически создаем елемент
+    
+    const isOnlineProducts = productName.isOnline  //Создаем условие, если тру верни is_online_products если нет...
+        ? 'is_online_products'
+        : 'is_not_online_products';
+    titleRef.classList.add('product-title', isOnlineProducts)
+    titleRef.textContent = productName.name  //Добавляем текст в тег h2
 
 
 
@@ -175,22 +179,18 @@ wrapperRef.append(titleRef, descRef, descPriceRef) //Добавляем в ди�
 return wrapperRef //ВОзвращаем див в котором уже все элементы
 }
 
-// fn(products[0]) //вызываем функцию которая возвращает div c вложенными тегами
-// fn(products[1] )
-
-
 const createArreyTags = products.map(product => fn(product))
  //создаем функц. которая возвраще масив обьектов полученой из FN. Тоесть функц. возвращает результат другой функц.
 console.log(createArreyTags)
 
  
 const cardRoot = document.querySelector('#root') // Находим "id=root" в HTML разметке и присваеваем переменной то что нашли
-cardRoot.append(...createArreyTags) // Распыляем масив обект и апендом добавл. в дом// Добавляем созданые элементы в ДОМ
+cardRoot.append(...createArreyTags) // Распыляем масив обектов и апендом добавл. в дом// Добавляем созданые элементы в ДОМ
 
 
 /* 
 *
-*  -  Пример как импортировать обьект JS из другого файла
+* 
 *
 */
 
