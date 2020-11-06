@@ -8,17 +8,20 @@ const ingredients = [
 ];
 
 
-
-
 // const abbIngredients = document.createElement('li')
 // const abbTextIngredients = abbIngredients.textContent ='nfhfh'
 // console.log(abbIngredients)
 
-const metnt = ingredients.forEach((elem) => {
-    const wrapperRef = ('ul#ingredients');
 
-  wrapperRef.apend((`${document.createElement('li').textContent = elem}`))
-// wrapperRef.append(titleRef, descRef, descPriceRef)
-})
-console.log(metnt)
-// const names = users.map(user => user.name);
+
+
+for (let i = 0; i < ingredients.length; i += 1){
+  
+  const abbIngredients = document.createElement('li') // создаем лишки
+  abbIngredients.textContent = ingredients[i]   // Добавляем в лишки текст. из масива ingredients[i] который проходим циклом
+  const abbInDom = document.querySelector('#ingredients') //Находим елемент по ID 
+  
+   abbInDom.append(abbIngredients)  //Апендив в ЮЛ по имени  id
+ 
+}
+
