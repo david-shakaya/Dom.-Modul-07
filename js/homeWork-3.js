@@ -16,15 +16,14 @@ const images = [
   },
 ];
 
-const cicl = (qwe) => qwe.forEach( elem =>{
 
 
+const addImages = (arr) => arr.forEach( img =>{
 
 const gallery = document.querySelector('#gallery') 
 
-    gallery.insertAdjacentHTML('afterbegin', `<li><img class = "img-list-item" 
-    src=" ${elem.url}" alt= "${elem.alt}" /> </li > `)
-
+    gallery.insertAdjacentHTML('afterbegin', `<li><img class = "img-list-item-js" 
+    src=" ${img.url}" alt= "${img.alt}" /> </li > `)
     
 })
-cicl(images)
+addImages(images)
