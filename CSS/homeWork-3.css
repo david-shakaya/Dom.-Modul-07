@@ -1,0 +1,12 @@
+li {
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.img-list-item {
+  width: 300px;
+}

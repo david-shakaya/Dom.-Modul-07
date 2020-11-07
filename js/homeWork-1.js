@@ -56,6 +56,23 @@
 
 
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>  - Самое короткое решение
+const items = document.querySelectorAll(".item");
+const quantityItems = items.length;
+console.log(`В списке ${quantityItems} категории.`)
+
+items.forEach(item => {
+    console.log(`Категория: ${item.children[0].textContent}`)
+    console.log(`Количество элементов: ${item.children[1].children.length}`)
+})
+
+    
+    
+ 
+
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ЧУЖОЕ РЕШЕНИЕ ПЕРВОЙ ЗАДАЧИ <<<<<<<<<<<<<<<
 // const listReference = document.querySelector('ul#categories');
 // const listContent = ({ children }) =>{

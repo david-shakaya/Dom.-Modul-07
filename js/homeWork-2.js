@@ -8,20 +8,35 @@ const ingredients = [
 ];
 
 
-// const abbIngredients = document.createElement('li')
-// const abbTextIngredients = abbIngredients.textContent ='nfhfh'
-// console.log(abbIngredients)
 
 
 
 
-for (let i = 0; i < ingredients.length; i += 1){
+// function abbElem (element){
+// for (let i = 0; i < element.length; i += 1){
   
-  const abbIngredients = document.createElement('li') // создаем лишки
-  abbIngredients.textContent = ingredients[i]   // Добавляем в лишки текст. из масива ingredients[i] который проходим циклом
+//   const abbIngredients = document.createElement('li') // создаем лишки
+//   abbIngredients.textContent = element[i]   // Добавляем в лишки текст. из масива ingredients[i] который проходим циклом
+//   const abbInDom = document.querySelector('#ingredients') //Находим елемент по ID 
+  
+//    abbInDom.append(abbIngredients)  //Апендиm в ЮЛ по имени  id
+ 
+//   }
+// }
+// abbElem(ingredients)
+ 
+
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// решение задачи с помощью стрелочной функции и цыкла forEach
+const get = (arr) => arr.forEach(element => {
+
+ const abbIngredients = document.createElement('li') // создаем лишки
+  abbIngredients.textContent = element   // Добавляем в лишки текст. из масива ingredients[i] который проходим циклом
   const abbInDom = document.querySelector('#ingredients') //Находим елемент по ID 
   
-   abbInDom.append(abbIngredients)  //Апендив в ЮЛ по имени  id
- 
-}
+  abbInDom.append(abbIngredients)  
+});
 
+get(ingredients)
