@@ -26,8 +26,76 @@
     </ul>
 
 </div>
+<div class="sobutiya">
+    
+<!-- СОБЫТИЯ -->
+    <h2>-- СОБЫТИЯ --</h2>
+
+    <button class="js-action-btn">Целевая кнопка</button>
+    <button class="js-add-listener">Добавить слушатель</button>
+    <button class="js-remuve-listener">Снять слушатель</button>
+</div>
+<br>
+<br>
+<br>
+
+<!-- Событие сабмита формы -->
+<form class="js-register-form" autocomplete="off">
+    <div role="group">
+        <label>
+            Почта
+            <input type="email" name="email" />
+        </label>
+        <label>
+            Пароль
+            <input name="password" type="password" />
+        </label>
+    </div>
+
+    <br />
+    <div role="group">
+        <b>Тип подписки:</b>
+        <label>
+            <input type="radio" name="subscription" value="free" />
+            Free
+        </label>
+        <label>
+            <input type="radio" name="subscription" value="basic" />
+            Basic
+        </label>
+        <label>
+            <input type="radio" name="subscription" value="pro" />
+            Pro
+        </label>
+    </div>
+
+    <br />
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+ <!-- СОБЫТИЯ ИНПУТОВ -->
+ <br>
+ <br>
+<h2>-- События инпутов --</h2>
+<label>
+    Имя
+    <input type="text" class="js-input" />
+</label>
+
+<p>
+    <label>
+        <input type="checkbox" class="js-license" />
+        Принимаю лицензинное соглашение
+    </label>
+</p>
+
+<button type="submit" disabled class="js-button">
+    Зарегистрироваться как <span>Аноним</span>
+</button>
+
 
    <!-- <script src="./js/obj-1.js "type="module"></script> -->
-   <!-- <script src="./js/DOM.js" type="module"></script> -->
+   <script src="./js/DOM.js" type="module"></script>
+
 </body>
 </html>
