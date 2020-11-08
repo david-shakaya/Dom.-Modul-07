@@ -320,3 +320,20 @@
   *  Событие input i change
   *  Чекбоксы и свойство checked
 */
+
+const inputRef = document.querySelector('.js-input');
+
+inputRef.addEventListener('change', (event) => {
+    console.log(event.target.value);  
+    
+    
+    const abbIngredients = document.createElement('p') 
+    abbIngredients.textContent = event.target.value
+    // addEventListener
+    // abbIngredients.classList.add('cls')
+   const abbInDom =document.querySelector('.div')
+    abbInDom.append(abbIngredients)  
+
+    
+
+})
