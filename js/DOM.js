@@ -153,6 +153,7 @@
 // console.log(wrapperRef)
 
 
+
 //     const titleRef = document.createElement('h2') //Динамически создаем елемент
     
 //     const isOnlineProducts = productName.isOnline  //Создаем условие, если тру верни is_online_products если нет...
@@ -321,19 +322,55 @@
   *  Чекбоксы и свойство checked
 */
 
-const inputRef = document.querySelector('.js-input');
+//   //ПРИМЕР: 
+//     // Делаем , то что пишем в форме отображаеться в соседней кнопке. "Зарегистрироваться как.." 
+// const inputRef = document.querySelector('.js-input');  // находим первый инпут с таким класом
+// const findElemRef = document.querySelector('.js-button > span')  // ищем спан в кнопке
+// const checboxRef = document.querySelector('.js-license')
+// const buttonRef = document.querySelector('.js-button')
+// // // // Пример  - 1
+// inputRef.addEventListener('input', (event) => {   //вешаем слушатель событий 
+//     console.log(event.target.value);                  //event.target.value - значение того что вводим
 
-inputRef.addEventListener('change', (event) => {
-    console.log(event.target.value);  
-    
-    
-    const abbIngredients = document.createElement('p') 
-    abbIngredients.textContent = event.target.value
-    // addEventListener
-    // abbIngredients.classList.add('cls')
-   const abbInDom =document.querySelector('.div')
-    abbInDom.append(abbIngredients)  
+//   findElemRef.textContent = event.target.value                    //Текст спана равен event.target.value(то что вводи)
+       
+//     // inputRef.append(findElemRef)                          
 
-    
+// })
 
-})
+// // // Пример  - 2  - чекбокс с галочкой дай доступ к кнопке
+// checboxRef.addEventListener('change', (event) =>{
+//   buttonRef.disabled = !event.target.checked    //Запись заменяет полную запись if, else
+//     //disabled - блокирует любой элем. формы.(делает его не кликабельн)
+//    // Тоесть если event.target.checked (чекбокс чекнули) то  buttonRef.disabled убрать с елемента кнопки. И наоборо. 
+    
+//   // // if (event.target.checked === true) {
+//   // //   buttonRef.disabled = false
+//   // // }
+//   // //else {
+//   // // buttonRef.disabled = true
+//   // // }
+ 
+// });
+
+//    >>>>>>>>>> ТЕПЕРЬ ПЕРЕПИШЕМ ВСЕ НА БОЛЕЕ КРАСИВЫЙ КОД <<<<<<<<<<
+  // Основной принцип, 1- ссылки на дом, 2- Регистрация событий , 3 - Ссылки на колбеки
+
+//   // ссылки на дом
+//   const inputRef = document.querySelector('.js-input');  
+// const findElemRef = document.querySelector('.js-button > span')  
+// const checboxRef = document.querySelector('.js-license')
+// const buttonRef = document.querySelector('.js-button')
+
+// // Регистрация событий 
+// inputRef.addEventListener('input', handleInputChenge) 
+// checboxRef.addEventListener('change', handlelicenseChenge)
+
+// // Ссылки на колбеки
+// function handleInputChenge(event) {
+//   findElemRef.textContent = event.target.value  
+// }
+
+//  function handlelicenseChenge (event) {
+//   buttonRef.disabled = !event.target.checked   
+// }
