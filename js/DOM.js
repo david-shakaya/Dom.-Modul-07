@@ -374,3 +374,59 @@
 //  function handlelicenseChenge (event) {
 //   buttonRef.disabled = !event.target.checked   
 // }
+
+
+
+
+// ======================================================================================================
+// ======================================================================================================
+                                //  --------- ДЕЛАЕМ МОДАЛКУ ------
+// Важно 
+// target - Это то куда мы кликаем в данный момент 
+// currentTarget - Это текущий елемент(неизменный) тот элемент на который мы вешаем клик
+
+
+/* НАХОДИМ КЛАССЫ*/
+// Находим кнопку с дата атрибутом  
+const buttonOpenModalRef = document.querySelector('button[data-action="open-modal"]');
+const buttonCloseModalRef = document.querySelector('button[data-action="close-modal"]');
+// находим боди , в сss повешан класс со стилями на боди 
+const bodyRef = document.querySelector('body');
+const backdropRef = document.querySelector('.js-backdrop')
+
+
+/*  СЛУШАТЕЛИ*/
+// Добавляем слушатель на клик и в функии добавляем клас боди(открыть модалку)
+buttonOpenModalRef.addEventListener('click', onOpenModal)
+// Добавляем слушатель на клик и в функии УДАЛЯЕМ клас с боди(закрыть модалку)
+buttonCloseModalRef.addEventListener('click', onCloseModal)
+// Добавляем слушатель на клик что бы при нажатии на серую область backdrop  (закрыть модалку)
+backdropRef.addEventListener('click', onBackdropClick)
+
+
+/*  ФУНКЦИИ */
+//Закрывает модалку при нажатии esc. На window вешаем слушатель keydown.
+// На место колбека передаем функцию onPressEscape которая и закрівает модалку.
+function onOpenModal() {
+  window.addEventListener('keydown', onPressEscape)
+  bodyRef.classList.add('show-modal')
+}
+
+function onCloseModal() {
+  window.removeEventListener('keydown', onPressEscape)
+  bodyRef.classList.remove('show-modal')
+}
+
+function onBackdropClick(event) {
+  if (event.target === event.currentTarget) {
+   onCloseModal()
+  }
+}
+
+
+function onPressEscape (event) {
+  if (event.code === 'Escape') {
+      onCloseModal()
+    }
+  }
+  
