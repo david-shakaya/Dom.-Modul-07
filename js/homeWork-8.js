@@ -4,27 +4,37 @@ const inputControlsRef = divControlsRef.firstElementChild
 const btnRenderRef = divControlsRef.querySelector('[data-action="render"]')
 const btnDestroyRef = divControlsRef.querySelector('[data-action="destroy"]')
 
-console.log(btnDestroyRef);
 
-let arr = [];
 
-inputControlsRef.addEventListener('click', (event) => {
+inputControlsRef.addEventListener('click', getNumber )
+//     (event) => {
 
-    // console.log(arr.push(+event.target.value.));
-    let value = [+event.target.value] 
-    value = value.pop()
+//     //  console.log(arr.push(+event.target.value.));
+//     let value = [+event.target.value]
+//     // value = value.pop()
+//  arr = value
+//  console.log(arr)
+// })
 
-    console.log(value)
-for (let i = 0; i < value; i++) {
-    // const element = array[i];
-arr.push([i])
+function getNumber () {
++inputControlsRef.value;
+   
 }
-//  console.log(value);
 
-console.log(arr);
-} )
+function createDiv(getNumber) {
 
-// for (let i = 0; i < arr; i++) {
-//     // const element = array[i];
-//     console.log(i);
-// }
+for (let i = 0; i < getNumber; i +=1) {
+   
+    console.log('sd')
+  }
+}
+
+
+
+
+
+
+// btnRenderRef.addEventListener('click', () =>{
+
+    
+// })
