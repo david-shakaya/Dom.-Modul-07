@@ -118,75 +118,75 @@
     </p>
     <p>Цена: 2000грн.</p>
 </div>
-*/
+ */
 
-// const products = [{
-//     name: 'Светоприводы',
-//     description:
-//         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
-//     price: 2000,
-//     isOnline: true
-// },
-// {
-//     name: 'Сракорефрижираторы',
-//     description:
-//         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
-//     price: 1400,
-//     isOnline: false
+const products = [{
+    name: 'Светоприводы',
+    description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
+    price: 2000,
+    isOnline: true
+},
+{
+    name: 'Сракорефрижираторы',
+    description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
+    price: 1400,
+    isOnline: false
 
-// },
-// {
-//     name: 'Алюминевые огурцы',
-//     description:
-//         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
-//     price: 325,
-//     isOnline: false
-// }]
-
-
-
-
-// const fn = (productName) => {
-
-// const wrapperRef = document.createElement('div') //Динамически создаем елемент div
-// wrapperRef.classList.add('product-cart')  // Добавляем класс div - у
-// console.log(wrapperRef)
+},
+{
+    name: 'Алюминевые огурцы',
+    description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rem, earum quasi libero veniam totam voluptatibus unde, excepturi nihil dolorem quia voluptatem corporis tempore cumque laboriosam est nulla in. Officia.',
+    price: 325,
+    isOnline: false
+}]
 
 
 
-//     const titleRef = document.createElement('h2') //Динамически создаем елемент
+
+const fn = (productName) => {
+
+const wrapperRef = document.createElement('div') //Динамически создаем елемент div
+wrapperRef.classList.add('product-cart')  // Добавляем класс div - у
+console.log(wrapperRef)
+
+
+
+    const titleRef = document.createElement('h2') //Динамически создаем елемент
     
-//     const isOnlineProducts = productName.isOnline  //Создаем условие, если тру верни is_online_products если нет...
-//         ? 'is_online_products'
-//         : 'is_not_online_products';
-//     titleRef.classList.add('product-title', isOnlineProducts)
-//     titleRef.textContent = productName.name  //Добавляем текст в тег h2
+    const isOnlineProducts = productName.isOnline  //Создаем условие, если тру верни is_online_products если нет...
+        ? 'is_online_products'
+        : 'is_not_online_products';
+    titleRef.classList.add('product-title', isOnlineProducts)
+    titleRef.textContent = productName.name  //Добавляем текст в тег h2
 
 
 
-// const descRef = document.createElement('p')
-// descRef.classList.add('product-subtitle')
-// descRef.textContent = productName.description
+const descRef = document.createElement('p')
+descRef.classList.add('product-subtitle')
+descRef.textContent = productName.description
 
 
-// const descPriceRef = document.createElement('p')
-// descPriceRef.classList.add('product-desc-price')
-// descPriceRef.textContent = `Цена: ${productName.price} кредитов`
+const descPriceRef = document.createElement('p')
+descPriceRef.classList.add('product-desc-price')
+descPriceRef.textContent = `Цена: ${productName.price} кредитов`
 
 
     
-// wrapperRef.append(titleRef, descRef, descPriceRef) //Добавляем в див другие елементы 'апендом'
+wrapperRef.append(titleRef, descRef, descPriceRef) //Добавляем в див другие елементы 'апендом'
 
-// return wrapperRef //ВОзвращаем див в котором уже все элементы
-// }
+return wrapperRef //ВОзвращаем див в котором уже все элементы
+}
 
-// const createArreyTags = products.map(product => fn(product))
-//  //создаем функц. которая возвраще масив обьектов полученой из FN. Тоесть функц. возвращает результат другой функц.
-// console.log(createArreyTags)
+const createArreyTags = products.map(product => fn(product))
+ //создаем функц. которая возвраще масив обьектов полученой из FN. Тоесть функц. возвращает результат другой функц.
+console.log(createArreyTags)
 
  
-// const cardRoot = document.querySelector('#root') // Находим "id=root" в HTML разметке и присваеваем переменной то что нашли
-// cardRoot.append(...createArreyTags) // Распыляем масив обектов и апендом добавл. в дом// Добавляем созданые элементы в ДОМ
+const cardRoot = document.querySelector('#root') // Находим "id=root" в HTML разметке и присваеваем переменной то что нашли
+cardRoot.append(...createArreyTags) // Распыляем масив обектов и апендом добавл. в дом// Добавляем созданые элементы в ДОМ
 
 
 

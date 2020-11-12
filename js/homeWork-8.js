@@ -1,33 +1,52 @@
+let box;
+
 const divControlsRef = document.querySelector('#controls')
 
 const inputControlsRef = divControlsRef.firstElementChild
 const btnRenderRef = divControlsRef.querySelector('[data-action="render"]')
 const btnDestroyRef = divControlsRef.querySelector('[data-action="destroy"]')
 
+const divRef = document.querySelector('div#boxes')
 
 
-inputControlsRef.addEventListener('click', getNumber )
-//     (event) => {
 
-//     //  console.log(arr.push(+event.target.value.));
-//     let value = [+event.target.value]
-//     // value = value.pop()
-//  arr = value
-//  console.log(arr)
-// })
+let divFindRef;
 
-function getNumber () {
-+inputControlsRef.value;
-   
+
+
+
+
+inputControlsRef.addEventListener('click', getNumber)
+btnRenderRef.addEventListener('click', () => createDiv(getNumber()) )
+btnDestroyRef.addEventListener('click', () =>  createDiv(destroyBox()))
+
+//  щитает клики
+ function getNumber() {   
+   return +inputControlsRef.value;  
+    
+ }
+//   уничтожает боксы
+function destroyBox() {
+    return (inputControlsRef.value = 0,
+    
+    divFindRef.remove())
+    
+    
+    
+ }
+
+//   создает боксы
+function createDiv(amaunt) {
+    for (let i = 0; i < amaunt; i +=1) {
+        
+        box = document.createElement('div')
+        box.classList.add('box')
+        divRef.append(box)
+    }
+    divFindRef = document.querySelectorAll('.box')
+    console.log(divFindRef);
 }
 
-function createDiv(getNumber) {
-
-for (let i = 0; i < getNumber; i +=1) {
-   
-    console.log('sd')
-  }
-}
 
 
 
