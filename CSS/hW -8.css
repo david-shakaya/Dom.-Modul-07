@@ -1,0 +1,9 @@
+#boxes {
+  display: flex;
+}
+
+.box {
+  display: flex;
+
+  margin-right: 10px;
+}
