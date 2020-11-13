@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./CSS/hW -8.css">
 </head>
 <body>
+
+    <h3>Создет неободимое кол-тво эл.</h3>
     <!-- ЗАДАЧА 1 -->
 
     <!-- <ul id="categories">
@@ -92,10 +94,6 @@ placeholder="Введи 6 символов"
 
 
 <!-- ЗАДАЧА 8 -->
-<br>
-<br>
-<br>
-
 
 <div id="controls">
     <input type="number" min="0" max="100" step="1" />
@@ -107,6 +105,64 @@ placeholder="Введи 6 символов"
 <div id="element">
 </div>
 
+<br>
+<br>
+<br>
+<h2> Условие</h2>
+<p>Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество элементов в input и нажимает кнопку
+Создать, после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
+
+Создай функцию createBoxes(amount), которая принимает 1 параметр amount - число. Функция создает столько div, сколько
+указано в amount и добавляет их в div#boxes.
+
+Каждый созданный div:
+
+Имеет случайный rgb цвет фона
+Размеры самого первого div - 30px на 30px
+Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
+Создай функцию destroyBoxes(), которая очищает div#boxes.</p>
+
+<h2>Решение</h2>
+<p>
+    'let box;
+    const divControlsRef = document.querySelector('#controls')
+    const inputControlsRef = divControlsRef.firstElementChild
+    const btnRenderRef = divControlsRef.querySelector('[data-action="render"]')
+    const btnDestroyRef = divControlsRef.querySelector('[data-action="destroy"]')
+    const divRef = document.querySelector('div#boxes')
+    let divFindRef;
+    
+    inputControlsRef.addEventListener('click', getNumber)
+    btnRenderRef.addEventListener('click', () => createDiv(getNumber()) )
+    btnDestroyRef.addEventListener('click', () => createDiv(destroyBox()))
+    
+    // щитает клики
+    function getNumber() {
+    return +inputControlsRef.value;
+    
+    }
+    // уничтожает боксы
+    function destroyBox() {
+    inputControlsRef.value = 0
+    
+    
+    while (divRef.firstChild) {
+    divRef.firstChild.remove()
+    }
+    
+    }
+    
+    // создает боксы
+    function createDiv(amaunt) {
+    for (let i = 0; i < amaunt; i +=1) { box=document.createElement('div') box.classList.add('box')
+        box.style.backgroundColor=elementRand(); box.style.height=abbSize(); divRef.append(box) console.log(divRef); } //
+        let i=3; divFindRef=document.querySelector('.box') } function getRandomInt(min, max) { return
+        Math.floor(Math.random() * (max - min)) + min; } function elementRand() { box.style.backgroundColor='rgb(' +
+        getRandomInt(0, 255) + ', ' + getRandomInt(0, 255) + ', ' + getRandomInt(0, 255) + ')' ; }; let width=20 let
+        height=20 function abbSize() { if (divRef.firstChild) { box.style.width=width +=10 box.style.height=height +=10 }
+        else { box.style.width=width=30 box.style.height=height=30 } }
+'
+</p>
 
     <!-- <script src="./js/homeWork-1.js" type="module"></script> -->
     <!-- <script src="./js/homeWork-2.js" type="module"></script> -->

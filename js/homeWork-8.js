@@ -1,19 +1,10 @@
 let box;
-
 const divControlsRef = document.querySelector('#controls')
-
 const inputControlsRef = divControlsRef.firstElementChild
 const btnRenderRef = divControlsRef.querySelector('[data-action="render"]')
 const btnDestroyRef = divControlsRef.querySelector('[data-action="destroy"]')
-
 const divRef = document.querySelector('div#boxes')
-
-
 let divFindRef;
-
-
-
-
 
 inputControlsRef.addEventListener('click', getNumber)
 btnRenderRef.addEventListener('click', () => createDiv(getNumber()) )
@@ -48,15 +39,8 @@ function createDiv(amaunt) {
         console.log(divRef);
     }
     // let i = 3;
-    
-    
     divFindRef = document.querySelector('.box')
-   
 }
-
-
-
-
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -75,8 +59,6 @@ let width = 20
 let height = 20
 
 function abbSize() {
-
-
     if (divRef.firstChild) {
       
         box.style.width = width += 10
@@ -86,7 +68,5 @@ function abbSize() {
         box.style.width = width = 30
         box.style.height = height = 30
     }
-    
 }
 
-console.log(abbSize());
