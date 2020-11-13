@@ -27,8 +27,7 @@ btnDestroyRef.addEventListener('click', () =>  createDiv(destroyBox()))
 //   уничтожает боксы
 function destroyBox() {
     inputControlsRef.value = 0
-    // box.style.width = size = 30
-    // box.style.height  = size = 30
+
     
      while (divRef.firstChild) { 
          divRef.firstChild.remove()
@@ -43,14 +42,18 @@ function createDiv(amaunt) {
         box = document.createElement('div')
         box.classList.add('box')
         box.style.backgroundColor = elementRand();
-        box.style.width = abbSize() ;
+        box.style.height = abbSize();
+        
         divRef.append(box)
         console.log(divRef);
     }
-    divFindRef = document.querySelector('.box')
     // let i = 3;
+    
+    
+    divFindRef = document.querySelector('.box')
    
 }
+
 
 
 
@@ -66,12 +69,24 @@ function elementRand() {
         ', ' + getRandomInt(0, 255) + ')';
   };
 
-let width = 30
-  let height = 30
+
+  
+let width = 20
+let height = 20
+
 function abbSize() {
+
+
+    if (divRef.firstChild) {
+      
+        box.style.width = width += 10
+        box.style.height = height += 10
+    }
+    else {
+        box.style.width = width = 30
+        box.style.height = height = 30
+    }
     
-    box.style.width = width += 10
-    box.style.height  = height += 10
 }
 
-
+console.log(abbSize());
