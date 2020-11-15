@@ -36,7 +36,7 @@ function createDiv(amaunt) {
         box.style.height = abbSize();
         
         divRef.append(box)
-        console.log(divRef);
+  
     }
     // let i = 3;
     divFindRef = document.querySelector('.box')
