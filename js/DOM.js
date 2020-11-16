@@ -442,34 +442,59 @@ cardRoot.append(...createArreyTags) // Распыляем масив обект�
                                     // Модуль 8. Делегирование событий 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+// const ref ={
+//   jsContainer: document.querySelector('.js-container'),
 
-const addButtonRef = document.querySelector('.js-add-btn')
-const jsContainer =document.querySelector('.js-container');
-console.log(addButtonRef);
+// }
 
-addButtonRef.addEventListener('click', createBtn)
+//  ref.jsContainer.addEventListener('click', (event) =>{  //Вешаем на див в котором кнопки слушатель
 
+//    // event.target - то где сейчас происходит клик внутри дива со слушателем
+//   //  event.target.nodeName - имя элемента где произшел клик 
+//   //  if (event.target.nodeName === 'BUTTON') {
+//   //    event.target.classList = ('js-active-elem') 
+//   // }
 
- let numberEl = 5
-function createBtn () {
-  const createBtnr = document.createElement('button')
-  createBtnr.classList.add('btn-new')
-
-  const newBtn = document.querySelector('.btn-new')
-  console.log(newBtn);
-  numberEl+=1
-  createBtnr.textContent = 'Кнопка' + ` ${numberEl}`
+   
+   
+//   //  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+//   //  делаем то же самое, но что бы только одна активная кнопка была
+   
+//   //  if (event.target.nodeName !== 'BUTTON') { // если имя лемента во время клика не равно Кнопке
+//   //  return                                     // верни null
+//   // }
   
+//   // const nextElem = event.currentTarget.querySelector('.js-active-elem')  // ищем есть ли такой клас в саиске кнопок в диве
+//   // console.log(nextElem);
+  
+//   // if (nextElem) {   //Ecли клас равен trye то удаляем клас
+//   //   nextElem.classList.remove('js-active-elem') 
+//   // }
+//   //  //Ecли клас не найден то присваеваем!
+//   // event.target.classList.add('js-active-elem') 
+   
+// })
 
-     
-  if (numberEl === 15) {
-    while (newBtn) { 
-     newBtn.remove()
-    }
-    
-  }
 
-  jsContainer.append(createBtnr)
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Тот же пример что и выше но более поняный синтаксис для меня
+const ref ={
+  jsContainer: document.querySelector('.js-container'),
+
 }
 
+ ref.jsContainer.addEventListener('click', (event) =>{  //Вешаем на див в котором кнопки слушатель
 
+
+  if (event.target.nodeName !== 'BUTTON') {
+    return null
+   }
+   const remuveClass = event.currentTarget.querySelector('.js-active-elem')
+   if (remuveClass !== null) {
+   remuveClass.classList.remove('js-active-elem')
+  }
+   
+   event.target.classList.add('js-active-elem')
+})
