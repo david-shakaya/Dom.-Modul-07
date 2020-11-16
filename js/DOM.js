@@ -479,7 +479,12 @@ cardRoot.append(...createArreyTags) // Распыляем масив обект�
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//  Переписываем на Подфункции
 // Тот же пример что и выше но более поняный синтаксис для меня
+
+
+
 const ref ={
   jsContainer: document.querySelector('.js-container'),
 
@@ -492,9 +497,22 @@ const ref ={
     return null
    }
    const remuveClass = event.currentTarget.querySelector('.js-active-elem')
-   if (remuveClass !== null) {
-   remuveClass.classList.remove('js-active-elem')
-  }
-   
    event.target.classList.add('js-active-elem')
-})
+
+   removeNextElem(remuveClass)
+   removeIsSelf(remuveClass)   
+ })
+
+function removeNextElem(currentElem) {
+    if (currentElem !== null) {
+   currentElem.classList.remove('js-active-elem')
+  }
+ }
+
+ 
+function removeIsSelf(activeElem) {
+   
+if (activeElem) {
+     activeElem.classList.remove('js-active-elem')
+   }
+ }
