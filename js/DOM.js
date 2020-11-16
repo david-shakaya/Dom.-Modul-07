@@ -285,11 +285,15 @@ cardRoot.append(...createArreyTags) // Распыляем масив обект�
 //     // console.dir(formElements.subscription.value)  //pro
     
 
+
+//  //  !!!!!
+
+
 //     // // Пример того как собираем данные в масив обектов для отправки на бекенд.
     
-//     // const formData = [
-//     //     { name: formElements.subscription.value },
-//     //     { email: formElements.email.value}]
+    // const formData = [
+    //     { name: formElements.subscription.value },
+    //     { email: formElements.email.value}]
    
 
 //     //  Пример того как собрать все значение заполненой формы с помощью 
