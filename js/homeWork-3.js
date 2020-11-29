@@ -27,3 +27,18 @@ const gallery = document.querySelector('#gallery')
     
 })
 addImages(images)
+
+
+// // >>>>>>>>>>>>>>>>>>>>>>>Лучший вариант вставки 
+// const galleryRef = document.querySelector('#gallery');
+// console.log(galleryRef);
+
+
+// const fn = images.reduce(function (acc, img) {
+
+//  return  acc.concat(`<li><img class = "img-list-item-js"  src=" ${img.url}" alt= "${img.alt}" /> </li >` )
+  
+// },'')
+
+// console.log(fn);
+// galleryRef.insertAdjacentHTML('afterbegin',fn)
